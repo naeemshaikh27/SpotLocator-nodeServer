@@ -33,10 +33,14 @@ app.use( bodyParser.urlencoded() );
 app.post('/products', function(req, res, next){
 		
 	var responseString="";
+	 
 	  var connection =  mysql.createConnection({
-  		user: "adminRIaEE8v", 
-	password: "YGZ2y4qGjtl6", 
-	database: "nodejs",
+  		 host     : process.env.OPENSHIFT_MYSQL_DB_HOST,
+         port     : process.env.OPENSHIFT_MYSQL_DB_PORT,
+         user     : process.env.OPENSHIFT_MYSQL_DB_USERNAME,
+         password : process.env.OPENSHIFT_MYSQL_DB_PASSWORD,
+         database : 'nodejs',
+         socket   : process.env.OPENSHIFT_MYSQL_DB_SOCKET,
 	multipleStatements: true
   });
 	connection.connect();
@@ -88,9 +92,12 @@ app.post('/login', function(req, res, next){
 	
 	
 	  var connection =  mysql.createConnection({
-  		user: "adminRIaEE8v", 
-	password: "YGZ2y4qGjtl6", 
-	database: "nodejs",
+  		 host     : process.env.OPENSHIFT_MYSQL_DB_HOST,
+         port     : process.env.OPENSHIFT_MYSQL_DB_PORT,
+         user     : process.env.OPENSHIFT_MYSQL_DB_USERNAME,
+         password : process.env.OPENSHIFT_MYSQL_DB_PASSWORD,
+         database : 'nodejs',
+         socket   : process.env.OPENSHIFT_MYSQL_DB_SOCKET,
 	multipleStatements: true
   });
 	connection.connect();
@@ -143,10 +150,14 @@ app.post('/login', function(req, res, next){
 app.post('/signup', function(req, res, next){
 	
 	
-	   var connection =  mysql.createConnection({
-  		user: "adminRIaEE8v", 
-	password: "YGZ2y4qGjtl6", 
-	database: "nodejs",
+	  
+	  var connection =  mysql.createConnection({
+  		 host     : process.env.OPENSHIFT_MYSQL_DB_HOST,
+         port     : process.env.OPENSHIFT_MYSQL_DB_PORT,
+         user     : process.env.OPENSHIFT_MYSQL_DB_USERNAME,
+         password : process.env.OPENSHIFT_MYSQL_DB_PASSWORD,
+         database : 'nodejs',
+         socket   : process.env.OPENSHIFT_MYSQL_DB_SOCKET,
 	multipleStatements: true
   });
 	connection.connect();
@@ -183,9 +194,12 @@ app.post('/forgot', function(req, res, next){
 	
 	
 	  var connection =  mysql.createConnection({
-  		user: "adminRIaEE8v", 
-	password: "YGZ2y4qGjtl6", 
-	database: "nodejs",
+  		 host     : process.env.OPENSHIFT_MYSQL_DB_HOST,
+         port     : process.env.OPENSHIFT_MYSQL_DB_PORT,
+         user     : process.env.OPENSHIFT_MYSQL_DB_USERNAME,
+         password : process.env.OPENSHIFT_MYSQL_DB_PASSWORD,
+         database : 'nodejs',
+         socket   : process.env.OPENSHIFT_MYSQL_DB_SOCKET,
 	multipleStatements: true
   });
 	connection.connect();
@@ -253,10 +267,14 @@ app.post('/addLoc', function(req, res, next){
 	}
 	
 	console.log(Generatedcode);
-  var connection =  mysql.createConnection({
-  		user: "adminRIaEE8v", 
-	password: "YGZ2y4qGjtl6", 
-	database: "nodejs",
+ 
+	  var connection =  mysql.createConnection({
+  		 host     : process.env.OPENSHIFT_MYSQL_DB_HOST,
+         port     : process.env.OPENSHIFT_MYSQL_DB_PORT,
+         user     : process.env.OPENSHIFT_MYSQL_DB_USERNAME,
+         password : process.env.OPENSHIFT_MYSQL_DB_PASSWORD,
+         database : 'nodejs',
+         socket   : process.env.OPENSHIFT_MYSQL_DB_SOCKET,
 	multipleStatements: true
   });
 	connection.connect();
@@ -299,9 +317,12 @@ app.post('/places', function(req, res, next){
 	
 
 	  var connection =  mysql.createConnection({
-  		user: "adminRIaEE8v", 
-	password: "YGZ2y4qGjtl6", 
-	database: "nodejs",
+  		 host     : process.env.OPENSHIFT_MYSQL_DB_HOST,
+         port     : process.env.OPENSHIFT_MYSQL_DB_PORT,
+         user     : process.env.OPENSHIFT_MYSQL_DB_USERNAME,
+         password : process.env.OPENSHIFT_MYSQL_DB_PASSWORD,
+         database : 'nodejs',
+         socket   : process.env.OPENSHIFT_MYSQL_DB_SOCKET,
 	multipleStatements: true
   });
 	connection.connect();
@@ -359,10 +380,14 @@ app.post('/places', function(req, res, next){
 app.post('/delete', function(req, res, next){
 	
 	
+	 
 	  var connection =  mysql.createConnection({
-  		user: "adminRIaEE8v", 
-	password: "YGZ2y4qGjtl6", 
-	database: "nodejs",
+  		 host     : process.env.OPENSHIFT_MYSQL_DB_HOST,
+         port     : process.env.OPENSHIFT_MYSQL_DB_PORT,
+         user     : process.env.OPENSHIFT_MYSQL_DB_USERNAME,
+         password : process.env.OPENSHIFT_MYSQL_DB_PASSWORD,
+         database : 'nodejs',
+         socket   : process.env.OPENSHIFT_MYSQL_DB_SOCKET,
 	multipleStatements: true
   });
 	connection.connect();
