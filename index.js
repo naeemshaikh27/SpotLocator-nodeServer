@@ -33,8 +33,5 @@ app.get('/demo', function(req, res, next){
 
 
 
-
-
-app.listen(process.env.OPENSHIFT_NODEJS_PORT || 80, function(){
-  console.log('CORS-enabled web server listening on port 80');
-});
+app.listen(process.env.OPENSHIFT_NODEJS_PORT || 8080,
+process.env.OPENSHIFT_NODEJS_IP);
