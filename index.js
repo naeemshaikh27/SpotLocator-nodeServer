@@ -162,7 +162,8 @@ app.post('/signup', function(req, res, next){
 	 connection.query( strQuery, function(err){
   	if(err)	{
   		res.json({
-				 "status":false
+				 "status":false,
+				 "error":err
 				});
 		res.end();
   	}else{
