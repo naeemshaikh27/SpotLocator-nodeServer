@@ -167,7 +167,7 @@ app.post('/signup', function(req, res, next){
   		res.json({
 				 "status":false,
 				 "error":err,
-				 "obj":obj
+				 "obj":JSON.Stringify(obj)
 				});
 		res.end();
   	}else{
