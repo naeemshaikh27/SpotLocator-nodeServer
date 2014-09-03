@@ -147,16 +147,16 @@ app.post('/login', function(req, res, next){
 
 app.post('/signup', function(req, res, next){
 	
-	
-	  
-	   var connection =  mysql.createConnection({
+	var obj={
   		 host     : process.env.OPENSHIFT_MYSQL_DB_HOST,
 		   port     : process.env.OPENSHIFT_MYSQL_DB_PORT,
          user     : process.env.OPENSHIFT_MYSQL_DB_USERNAME,
          password : process.env.OPENSHIFT_MYSQL_DB_PASSWORD,
          database : process.env.OPENSHIFT_GEAR_NAME
 	
-  });
+  };
+	  
+	   var connection =  mysql.createConnection(obj);
 	connection.connect();
 	
 	
@@ -166,7 +166,8 @@ app.post('/signup', function(req, res, next){
   	if(err)	{
   		res.json({
 				 "status":false,
-				 "error":err
+				 "error":err,
+				 "obj":obj
 				});
 		res.end();
   	}else{
