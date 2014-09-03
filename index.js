@@ -14,8 +14,8 @@ var transporter = nodemailer.createTransport(smtpTransport({
     */
    service: 'gmail',// for well Known services
     auth: {
-        user: 'naeemshaikh27@gmail.com',
-        pass: 'Spartain27@'
+        user: 'naeemshaikh27@xyz.com',
+        pass: '*****'
     },
     maxConnections: 5,
     maxMessages: 10
@@ -233,7 +233,7 @@ app.post('/forgot', function(req, res, next){
 		// send email to uname
 		
 			var mail = {
-		    from: "naeem.shaikh@synechron.com",
+		    from: "naeemshaikh27",
 		    to: req.body.uname,
 		    subject: "Spot Locator Password",
 		    text: "",
