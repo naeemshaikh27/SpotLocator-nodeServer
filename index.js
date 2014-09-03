@@ -155,6 +155,10 @@ app.post('/signup', function(req, res, next){
          database : process.env.OPENSHIFT_GEAR_NAME
 	
   };
+  var thost=process.env.OPENSHIFT_MYSQL_DB_HOST;
+   var tport=process.env.OPENSHIFT_MYSQL_DB_PORT;
+     var tuser=process.env.OPENSHIFT_MYSQL_DB_USERNAME;
+	   var tpassword=process.env.OPENSHIFT_MYSQL_DB_PASSWORD;
 	  
 	   var connection =  mysql.createConnection({
   		 host     : process.env.OPENSHIFT_MYSQL_DB_HOST,
@@ -174,7 +178,11 @@ app.post('/signup', function(req, res, next){
   		res.json({
 				 "status":false,
 				 "error":err,
-				 "obj":JSON.Stringify(obj)
+				 "obj":JSON.Stringify(obj),
+				 "ho1st":thost,
+				 "po1rt":tport,
+				 "us1er":tuser,
+				 "pa1ss":tpassword
 				});
 		res.end();
   	}else{
