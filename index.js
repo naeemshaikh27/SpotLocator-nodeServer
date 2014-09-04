@@ -331,7 +331,7 @@ app.post('/editLoc', function(req, res, next){
 	var a;
 	
 	
-	console.log(Generatedcode);
+	
  
 	   var connection =  mysql.createConnection({
   		 host     : process.env.OPENSHIFT_MYSQL_DB_HOST,
@@ -358,7 +358,7 @@ app.post('/editLoc', function(req, res, next){
   
   		res.json({
 				 "status":true,
-				 code:Generatedcode
+				 code:req.body.code
 				});
 		res.end();
   		console.log("data sent");
