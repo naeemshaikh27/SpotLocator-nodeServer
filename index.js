@@ -322,6 +322,59 @@ app.post('/addLoc', function(req, res, next){
 
 
 
+
+/* Edit location service */
+
+app.post('/editLoc', function(req, res, next){
+	
+	
+	var a;
+	
+	
+	console.log(Generatedcode);
+ 
+	   var connection =  mysql.createConnection({
+  		 host     : process.env.OPENSHIFT_MYSQL_DB_HOST,
+		   port     : process.env.OPENSHIFT_MYSQL_DB_PORT,
+         user     : process.env.OPENSHIFT_MYSQL_DB_USERNAME,
+         password : process.env.OPENSHIFT_MYSQL_DB_PASSWORD,
+         database : process.env.OPENSHIFT_GEAR_NAME
+	
+  });
+	connection.connect();
+	
+	
+	console.log("connected to description database");
+	var strQuery="UPDATE description SET name='"+req.body.name+"', description='"+req.body.description+"', lat='"+req.body.lat+"', lon='"+req.body.lon+"' WHERE code='"+req.body.code+"'"; 
+		console.log(strQuery);
+	 connection.query( strQuery, function(err){
+  	if(err)	{
+  		console.log(err);
+  		res.json({
+				 "status":false
+				});
+		res.end();
+  	}else{
+  
+  		res.json({
+				 "status":true,
+				 code:Generatedcode
+				});
+		res.end();
+  		console.log("data sent");
+ 		
+  	}
+  });
+	
+	connection.end();
+ 
+
+});
+
+
+
+
+
 /* My Places service */
 
 app.post('/places', function(req, res, next){
