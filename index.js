@@ -238,7 +238,8 @@ app.post('/forgot', function(req, res, next){
 		
 		
 			var mail = {
-		    from: "naeemshaikh27",
+		    from: "naeem shaikh <naeemshaikh@nodejsSpotLocator.com>",
+			name:"naeem shaikh",
 		    to: req.body.uname,
 		    subject: "Spot Locator Password",
 		    text: "",
