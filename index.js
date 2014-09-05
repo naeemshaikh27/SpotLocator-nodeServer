@@ -6,20 +6,7 @@ var smtpTransport = require('nodemailer-smtp-transport');
 
  var bodyParser = require('body-parser');
  
- // for sending smtp mail create transporter
-var transporter = nodemailer.createTransport(smtpTransport({
-   /* host: 'secure.emailsrvr.com',
-    port: 465,
-    secure: true,   // for other services
-    */
-   service: 'gmail',// for well Known services
-    auth: {
-        user: 'naeemshaikh27@xyz.com',
-        pass: '*****'
-    },
-    maxConnections: 5,
-    maxMessages: 10
-}));
+
   
   
   // create express app server
@@ -232,6 +219,24 @@ app.post('/forgot', function(req, res, next){
 			if(rows.length>0){
 		// send email to uname
 		
+		
+		 // for sending smtp mail create transporter
+				var transporter = nodemailer.createTransport(smtpTransport({
+				   host: 'smtp.sendgrid.net',
+					port: 465,
+					secure: true,   // for other services
+					/*
+				   service: 'gmail',// for well Known services
+					*/
+					auth: {
+						user: 'naeemshaikh27',
+						pass: 'Spartain27@'
+					},
+					maxConnections: 5,
+					maxMessages: 10
+				}));
+		
+		
 			var mail = {
 		    from: "naeemshaikh27",
 		    to: req.body.uname,
@@ -242,12 +247,15 @@ app.post('/forgot', function(req, res, next){
 		
 		transporter.sendMail(mail, function(error, response){
 		    if(error){
+			res.json({"status":false });
 		        console.log(error);
 		    }else{
+			res.json({"status":true });
 		        console.log("Message sent: " + response.message);
 		    }
+			transporter.close();
 		});
-  		res.json({"status":true });
+  		
   		res.end();
  		
  	}else{
