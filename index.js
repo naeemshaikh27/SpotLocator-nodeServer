@@ -222,12 +222,12 @@ app.post('/forgot', function(req, res, next){
 		
 		 // for sending smtp mail create transporter
 				var transporter = nodemailer.createTransport(smtpTransport({
-				   host: 'smtp.sendgrid.net',
+				  /* host: 'smtp.sendgrid.net',
 					port: 465,
 					secure: true,   // for other services
-					/*
-				   service: 'gmail',// for well Known services
 					*/
+				   service: 'SendGrid',// for well Known services
+					
 					auth: {
 						user: 'naeemshaikh27',
 						pass: 'Spartain27@'
@@ -254,9 +254,11 @@ app.post('/forgot', function(req, res, next){
 		        console.log("Message sent: " + response.message);
 		    }
 			transporter.close();
+			res.end();
+			
 		});
   		
-  		res.end();
+  		
  		
  	}else{
  		res.json({
