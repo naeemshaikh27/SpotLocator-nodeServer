@@ -15,6 +15,10 @@ This whole application is hosted <a href='http://nodejs123-spotlocator.rhcloud.c
 </li>
 <li>SendGrid
 </li>
+<li>Jquery Mobile
+</li>
+<li>Google Maps
+</li>
 </ol>
 
 
