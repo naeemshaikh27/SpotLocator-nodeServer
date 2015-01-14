@@ -6,4 +6,6 @@ This is a demo project for learning how to create a simple node application usin
 
 This is a server code written in Node js for a <a href='https://github.com/naeemshaikh27/spot-locator-mobile'>mobile application</a> written in jquery mobile and google maps V3, for communicating to the database.
 
+This whole application is hosted <a href='http://nodejs123-spotlocator.rhcloud.com'>here on openshift</a>. 
+
 
