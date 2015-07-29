@@ -229,8 +229,8 @@ app.post('/forgot', function(req, res, next){
 				   service: 'SendGrid',// for well Known services
 					
 					auth: {
-						user: 'naeemshaikh27',
-						pass: 'Spartain27@'
+						user: '***',
+						pass: ***
 					},
 					maxConnections: 5,
 					maxMessages: 10
